@@ -1,0 +1,173 @@
+<?php
+
+use yii\db\Schema;
+use yii\db\Migration;
+
+class m151011_223427_add_translit_to_languages extends Migration
+{
+    public function up() {
+        $this->addColumn('languages', 'translit', $this->text());
+
+        $enTransliterationArray = [
+            'А' => 'A',
+            'а' => 'a',
+            'Б' => 'B',
+            'б' => 'b',
+            'В' => 'V',
+            'в' => 'v',
+            'Г' => 'G',
+            'г' => 'g',
+            'Д' => 'D',
+            'д' => 'd',
+            'Е' => 'E',
+            'е' => 'e',
+            'Ё' => 'Yo',
+            'ё' => 'yo',
+            'Ж' => 'Zh',
+            'ж' => 'zh',
+            'З' => 'Z',
+            'з' => 'z',
+            'И' => 'I',
+            'и' => 'i',
+            'Й' => 'J',
+            'й' => 'j',
+            'К' => 'K',
+            'к' => 'k',
+            'Л' => 'L',
+            'л' => 'l',
+            'М' => 'M',
+            'м' => 'm',
+            'Н' => "N",
+            'н' => 'n',
+            'О' => 'O',
+            'о' => 'o',
+            'П' => 'P',
+            'п' => 'p',
+            'Р' => 'R',
+            'р' => 'r',
+            'С' => 'S',
+            'с' => 's',
+            'Т' => 'T',
+            'т' => 't',
+            'У' => 'U',
+            'у' => 'u',
+            'Ф' => 'F',
+            'ф' => 'f',
+            'Х' => 'H',
+            'х' => 'h',
+            'Ц' => 'Cz',
+            'ц' => 'cz',
+            'Ч' => 'Ch',
+            'ч' => 'ch',
+            'Ш' => 'Sh',
+            'ш' => 'sh',
+            'Щ' => 'Shh',
+            'щ' => 'shh',
+            'Ъ' => 'ʺ',
+            'ъ' => 'ʺ',
+            'Ы' => 'Y`',
+            'ы' => 'y`',
+            'Ь' => '',
+            'ь' => '',
+            'Э' => 'E`',
+            'э' => 'e`',
+            'Ю' => 'Yu',
+            'ю' => 'yu',
+            'Я' => 'Ya',
+            'я' => 'ya',
+            '№' => '#',
+            'Ӏ' => '‡',
+            '’' => '`',
+            'ˮ' => '¨',
+        ];
+        $deTransliterationArray = [
+            'А' => 'A',
+            'а' => 'a',
+            'Б' => 'B',
+            'б' => 'b',
+            'В' => 'W',
+            'в' => 'w',
+            'Г' => 'G',
+            'г' => 'g',
+            'Д' => 'D',
+            'д' => 'd',
+            'Е' => 'Je',
+            'е' => 'je',
+            'Ё' => 'Jo',
+            'ё' => 'jo',
+            'Ж' => 'Sh',
+            'ж' => 'sh',
+            'З' => 'S',
+            'з' => 's',
+            'И' => 'I',
+            'и' => 'i',
+            'Й' => 'J',
+            'й' => 'j',
+            'К' => 'K',
+            'к' => 'k',
+            'Л' => 'L',
+            'л' => 'l',
+            'М' => 'M',
+            'м' => 'm',
+            'Н' => "N",
+            'н' => 'n',
+            'О' => 'O',
+            'о' => 'o',
+            'П' => 'P',
+            'п' => 'p',
+            'Р' => 'R',
+            'р' => 'r',
+            'С' => 'S',
+            'с' => 's',
+            'Т' => 'T',
+            'т' => 't',
+            'У' => 'U',
+            'у' => 'u',
+            'Ф' => 'F',
+            'ф' => 'f',
+            'Х' => 'Ch',
+            'х' => 'ch',
+            'Ц' => 'Z',
+            'ц' => 'z',
+            'Ч' => 'Tsch',
+            'ч' => 'tsch',
+            'Ш' => 'Sch',
+            'ш' => 'sch',
+            'Щ' => 'Schtsch',
+            'щ' => 'schtsch',
+            'Ъ' => 'ʺ',
+            'ъ' => 'ʺ',
+            'Ы' => 'y`',
+            'ы' => 'y`',
+            'Ь' => '',
+            'ь' => '',
+            'Э' => 'E`',
+            'э' => 'e`',
+            'Ю' => 'Ju',
+            'ю' => 'ju',
+            'Я' => 'Ja',
+            'я' => 'ja',
+            '№' => '#',
+            'Ӏ' => '‡',
+            '’' => '`',
+            'ˮ' => '¨',
+        ];
+        $this->update('languages', ['translit' => \yii\helpers\Json::encode($enTransliterationArray)], ['code' => 'en']);
+        $this->update('languages', ['translit' => \yii\helpers\Json::encode($deTransliterationArray)], ['code' => 'de']);
+    }
+
+    public function down() {
+        $this->dropColumn('languages', 'translit');
+    }
+
+    /*
+    // Use safeUp/safeDown to run migration code within a transaction
+    public function safeUp()
+    {
+    }
+
+    public function safeDown()
+    {
+    }
+    */
+}

@@ -1,0 +1,80 @@
+.login_wrap {
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#signin-wrap {
+    display: none;
+}
+
+#signup-wrap {
+    display: none;
+}
+
+#sign-buttons .sign-buttons {
+    padding: 4px;
+    margin: 11px 0;
+}
+
+#inviteDetailInfoModalComponentTemplate .avatar, .invite_form_wrap .avatar {
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#messageimage-image {
+	float:right;
+}
+
+.disabled-link {
+    pointer-events: none;
+    cursor: default;
+}
+
+.wrap {
+    margin-bottom: 0px !important;
+}
+
+#conteiner-content {
+    padding-bottom: 34px;
+}
+
+#profile-settings-btn {
+    position: absolute;
+    right: -107px;
+    top: 30px;
+    width: 106px;
+    white-space: inherit;
+    padding: 2px;
+}
+
+#image-upload-btn {
+    position: absolute;
+    width: 106px;
+    white-space: inherit;
+    top: 88px;
+    right: -107px;
+    padding: 2px;
+}
+
+.uploaded_thumbnail {
+    position: absolute;
+    width: 60px;
+    bottom: 82px;
+    right: 26px;
+}
+
+.message_image {
+    margin-top: 10px;
+    border: 1px solid #0303FF;
+    margin-bottom: 10px;
+}

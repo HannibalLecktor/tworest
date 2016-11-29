@@ -1,0 +1,24 @@
+#list_widget h4 {
+  margin-bottom: 40px;
+}
+#list_widget .row {
+  margin-right: 0px;
+}
+#list_widget .crop-image {
+  width: 134px;
+  height: 113px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 148px;
+  margin: 0;
+}
+#list_widget .panel-default {
+  border-color: #4B82F4;
+}
+#list_widget .col-md-3 {
+  padding-left: 0px;
+}
+#list_widget .btn-danger {
+  background-color: #FA380B;
+  border-color: #0b66ff;
+}
